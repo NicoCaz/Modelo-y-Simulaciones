@@ -1,0 +1,30 @@
+11/07/2023
+Se modificó la clase VariableApara que pueda generar números aleatorios fuera del rango 0..999
+((RN80#1000)+RN80)@(1+(Máxino)-(Mínimo))+(Mínimo)
+
+28/07/2020 
+Resumen de cambios en comparación versión actual en uso 2014
+
+Archivos
+
+- Se corrigen los errores estructurales conocidos al abrir archivos.
+- Se pueden abrir múltiples archivos por parámetros, lo que permite asociar *.gmdl a genmsi o arrastrar varios *.gmdl sobre el exe para abrirlos. 
+
+Sobre el modelo
+
+- Se corrige el problema de los ids de los módulos al cortar y pegar, por lo que no genera más el “error estructural” (por este motivo).
+- Se pueden mover las scrollbars del modelo presionando botón del medio del mouse y moviendo. 
+- Al crear un módulo si se crea cerca de una salida no vincula de otro módulo se crea el link automático y se alinea el módulo. (también funciona para las entradas internas de los módulos compuestos).
+- Cambia el shortcut del undo a Ctrl+Z (como cualquier aplicación normal!!) y el redo a Ctrl+Y
+- Corregido el bug de que cuando se crea un link y presiona botón derecho (ahora se interrumpe la acción pero no se rompe el modelo).
+- Se marcan los módulos con transacciones encadenadas en userchains y en retry de userchain. (antes “desaparecían”)
+
+Clases de módulos
+
+- Corregido el ExamineNumber para que el la clase de la propiedad “grupos” sea Numeric Group (esto hará que al abrir un modelo con la versión anterior no cargue esa propiedad y hay que volver a setearla)
+
+En el simulador, reportes y  monitor 
+
+- Se actualizan correctamente los parámetros de las transacciones en el monitor al reiniciar la simulación.
+- Se muestran valores de transacciones en userchain y en en la retry de las userchains (antes “desaparecían”). 
+- Muestra los ids de las transacciones encadenadas a una Userchain 
