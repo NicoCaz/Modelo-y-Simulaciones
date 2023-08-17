@@ -1,0 +1,25 @@
+0 Cajas           STORAGE         4  
+10 Giratoria       STORAGE         2  
+20                 GENERATE        60,10  
+30 A_Enter         ENTER           Giratoria,1  
+40 A_Advance       ADVANCE         3,2  
+50 A_Leave1        LEAVE           Giratoria,1  
+60 Entrada1        TRANSFER        450,StorageUse,A_FacilityUse  
+70 A_FacilityUse   QUEUE           qInformes  
+80                 SEIZE           Informes  
+90                 DEPART          qInformes  
+100                 ADVANCE         100,40  
+110                 RELEASE         Informes  
+120 Entrada11       TRANSFER        22,StorageUse,A_Enter1  
+130 A_Enter1        ENTER           Giratoria,1  
+140 A_Advance1      ADVANCE         3,2  
+150 A_Leave         LEAVE           Giratoria,1  
+160 A_Terminate     TERMINATE         
+170 StorageUse      QUEUE           qCajas  
+180                 ENTER           Cajas  
+190                 DEPART          qCajas  
+200                 ADVANCE         240,120  
+210                 LEAVE           Cajas  
+220                 TRANSFER        ,A_Enter1  
+230                 GENERATE        3600  
+240                 TERMINATE       1  
